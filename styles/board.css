@@ -1,0 +1,19 @@
+.board{
+    display: flex;
+    justify-content: space-between;
+    background-color: #9803787e;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: .5rem;
+    height: 100%;
+   
+}
+
+.board--column{
+    border: 1px dotted white;
+    width: 33%;
+    padding: .5rem;
+}
+.board--column--tittle{
+    font-size: 1.1rem;
+}
