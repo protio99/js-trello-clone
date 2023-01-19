@@ -10,7 +10,10 @@ card.forEach(c =>{
 
 })
 
-
+function addNewTask() {
+    console.log("it works!!");
+    
+}
 
 function dragStart(e) {
    
