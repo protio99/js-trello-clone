@@ -26,12 +26,12 @@ window.addEventListener("click", function (event) {
 function addTaskToLs(e) {
   let tasks = localStorage.getItem("tasks")
   let tasksParse = JSON.parse(tasks)
-  let tasksLength = Object.keys(tasksParse).length
+  let newPosition = Object.keys(tasksParse).length + 1
   e.preventDefault()
   modal.style.display = "none"
   localStorage.setItem("tasks", JSON.stringify(
     {
-      0: {
+      tasksLength: {
         "tittle": taskTittle.value,
         "description": taskDescription.value
       }
