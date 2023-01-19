@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <title>trello-clone</title>
   </head>
-  <body>
+  <body onload="verifyTasksObject()">
     <header class="header">
       <h1 class="header__tittle">Trello-clone</h1>
       <p class="header__paragraph">Using HTML drag and drop API from Javascript Vanilla</p>
@@ -48,6 +48,7 @@
                <button id="create-task">Create task</button>
             </form>
         </div>
+    <script src="./js/firstLoad.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/app.js"></script>
   </body>

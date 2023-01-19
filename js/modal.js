@@ -6,6 +6,9 @@ var closeButton = document.getElementsByClassName("close")[0];
 var createTask = document.getElementById("create-task");
 var taskTittle = document.getElementById("task-tittle")
 var taskDescription = document.getElementById("task-description")
+
+createTask.addEventListener('click', addTaskToLs)
+
 openModalButton.addEventListener("click", function () {
   modal.style.display = "block";
 });
@@ -20,7 +23,10 @@ window.addEventListener("click", function (event) {
   }
 });
 
-createTask.addEventListener('click', function (e) {
+function addTaskToLs(e) {
+  let tasks = localStorage.getItem("tasks")
+  let tasksParse = JSON.parse(tasks)
+  let tasksLength = Object.keys(tasksParse).length
   e.preventDefault()
   modal.style.display = "none"
   localStorage.setItem("tasks", JSON.stringify(
@@ -30,8 +36,6 @@ createTask.addEventListener('click', function (e) {
         "description": taskDescription.value
       }
     }))
-  console.log(taskTittle.value);
-  console.log(taskDescription.value);
+}
 
 
-})
