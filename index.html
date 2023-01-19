@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/board.css" />
     <link rel="stylesheet" href="./styles/card.css" />
     <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>trello-clone</title>
   </head>
   <body>
@@ -17,10 +18,14 @@
     <main class="board">
       <div class="board--column">
         <h3 class="board--column--tittle">To-do</h3>
-        <div class="card" draggable="true">
+        <div class="card" id="card" draggable="true">
           <div class="card--tittle">Tittle</div>
           <div class="card--content">Content</div>
         </div>
+        <div class="card" id="card2" draggable="true">
+            <div class="card--tittle">Tittle</div>
+            <div class="card--content">Content</div>
+          </div>
       </div>
       <div class="board--column">
         <h3 class="board--column--tittle">Doing</h3>
