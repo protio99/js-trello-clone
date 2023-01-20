@@ -8,8 +8,9 @@ var taskTittle = document.getElementById("task-tittle")
 var taskDescription = document.getElementById("task-description")
 
 createTask.addEventListener('click', addTaskToLs)
-
+console.log(openModalButton);
 openModalButton.addEventListener("click", function () {
+  console.log("I enter here");
   modal.style.display = "block";
 });
 // Si el usuario hace clic en la x, la ventana se cierra
@@ -24,18 +25,17 @@ window.addEventListener("click", function (event) {
 });
 
 function addTaskToLs(e) {
+  // e.preventDefault()
   let tasks = localStorage.getItem("tasks")
   let tasksParse = JSON.parse(tasks)
   let newPosition = Object.keys(tasksParse).length + 1
-  e.preventDefault()
   modal.style.display = "none"
-  localStorage.setItem("tasks", JSON.stringify(
-    {
-      tasksLength: {
-        "tittle": taskTittle.value,
-        "description": taskDescription.value
-      }
-    }))
+  tasksParse[newPosition] = {
+    "tittle": taskTittle.value,
+    "description": taskDescription.value
+  }
+  console.log(tasksParse);
+  localStorage.setItem("tasks", JSON.stringify(tasksParse))
 }
 
 

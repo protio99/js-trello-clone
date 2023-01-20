@@ -5,28 +5,24 @@ const card = document.querySelectorAll(".card")
 const boxes = document.querySelectorAll('.board--column')
 console.log(card);
 
-card.forEach(c =>{
+card.forEach(c => {
     c.addEventListener('dragstart', dragStart)
 
 })
 
-function addNewTask() {
-    console.log("it works!!");
-    
-}
 
 function dragStart(e) {
-   
+
     e.dataTransfer.setData('text/plain', e.target.id)
     // e.target.classList.add('hide')
     setTimeout(() => {
         e.target.classList.add('hide');
     }, 0);
-    console.log("Drag start" , e);
-    
+    console.log("Drag start", e);
+
 }
 
-boxes.forEach(box =>{
+boxes.forEach(box => {
     box.addEventListener('dragenter', dragEnter)
     box.addEventListener('dragover', dragOver)
     box.addEventListener('dragleave', dragLeave)
@@ -37,13 +33,13 @@ function dragEnter(e) {
     e.preventDefault();
     console.log("Drag enter", e);
     e.target.classList.add('drag-over');
-    
+
 }
 function dragOver(e) {
     e.preventDefault();
     console.log("Drag over", e);
     e.target.classList.add('drag-over');
-    
+
 }
 
 function dragLeave(e) {
@@ -53,6 +49,7 @@ function dragLeave(e) {
 function drop(e) {
     console.log("Drop", e);
     const id = e.dataTransfer.getData('text/plain');
+    console.log(e.dataTransfer);
     const draggable = document.getElementById(id);
 
     // add it to the drop target
