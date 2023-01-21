@@ -23,7 +23,7 @@ window.addEventListener("click", function (event) {
 });
 
 function addTaskToLocalStorage(e) {
-  e.preventDefault()
+  // e.preventDefault()
   let tasks = localStorage.getItem("tasks")
   let tasksParse = JSON.parse(tasks)
   let tasksLength = Object.keys(tasksParse).length

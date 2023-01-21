@@ -48,7 +48,12 @@ function dragLeave(e) {
 }
 function drop(e) {
     console.log("Drop", e);
+    var toDoColumn = document.getElementById("to-do-column")
+    var doingColumn = document.getElementById("doing-column")
+    var doneColumn = document.getElementById("done-column")
     const id = e.dataTransfer.getData('text/plain');
+    let div = document.getElementById(id)
+    console.log(div);
     let cardData = JSON.parse(localStorage.getItem("tasks"))
     const draggable = document.getElementById(id);
     // add it to the drop target
@@ -58,5 +63,19 @@ function drop(e) {
     e.target.classList.remove('drag-over');
     let newPosition = e.target.classList[1]
     cardData[id].position = newPosition
+
     localStorage.setItem('tasks', JSON.stringify(cardData))
+    div.parentNode.removeChild(div)
+    if (newPosition === "to-do") {
+        div.addEventListener('dragstart', dragStart)
+        toDoColumn.appendChild(div)
+    } else if (newPosition === "doing") {
+        div.addEventListener('dragstart', dragStart)
+        doingColumn.appendChild(div)
+
+    } else {
+        div.addEventListener('dragstart', dragStart)
+        doneColumn.appendChild(div)
+
+    }
 }
