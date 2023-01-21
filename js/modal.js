@@ -8,9 +8,7 @@ var taskTittle = document.getElementById("task-tittle")
 var taskDescription = document.getElementById("task-description")
 
 createTask.addEventListener('click', addTaskToLs)
-console.log(openModalButton);
 openModalButton.addEventListener("click", function () {
-  console.log("I enter here");
   modal.style.display = "block";
 });
 // Si el usuario hace clic en la x, la ventana se cierra

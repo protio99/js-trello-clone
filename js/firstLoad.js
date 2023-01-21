@@ -1,16 +1,22 @@
 function createNotes() {
+
     let tasks = JSON.parse(localStorage.getItem("tasks"))
     var toDoColumn = document.getElementById("to-do-column")
     Object.keys(tasks).forEach(function (key, index) {
         let tittle = tasks[key].tittle
         let description = tasks[key].description
         console.log(`card${index}`);
-        let newDivTask = `
-        <div class="card" id="card${index}" draggable="true">
+        let div = document.createElement('div')
+        div.setAttribute('draggable', true)
+        div.classList.add('card')
+        div.id = `card${index}`
+        div.innerHTML = `
+        
             <div class="card--tittle">${tittle}</div>
             <div class="card--content">${description}</div>
-        </div>`
-        toDoColumn.innerHTML += newDivTask
+        `
+        div.addEventListener('dragstart', dragStart)
+        toDoColumn.appendChild(div)
 
     });
 

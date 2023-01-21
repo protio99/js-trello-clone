@@ -1,7 +1,6 @@
 //querySelector select the first coincidence with 
 //the specific css selector, in this case id "card"
 const card = document.querySelectorAll(".card")
-
 const boxes = document.querySelectorAll('.board--column')
 console.log(card);
 
@@ -12,6 +11,7 @@ card.forEach(c => {
 
 
 function dragStart(e) {
+    console.log('id', e.target.id);
 
     e.dataTransfer.setData('text/plain', e.target.id)
     // e.target.classList.add('hide')
@@ -31,13 +31,13 @@ boxes.forEach(box => {
 
 function dragEnter(e) {
     e.preventDefault();
-    console.log("Drag enter", e);
+    // console.log("Drag enter", e);
     e.target.classList.add('drag-over');
 
 }
 function dragOver(e) {
     e.preventDefault();
-    console.log("Drag over", e);
+    // console.log("Drag over", e);
     e.target.classList.add('drag-over');
 
 }
@@ -49,7 +49,7 @@ function dragLeave(e) {
 function drop(e) {
     console.log("Drop", e);
     const id = e.dataTransfer.getData('text/plain');
-    console.log(e.dataTransfer);
+    console.log(id);
     const draggable = document.getElementById(id);
 
     // add it to the drop target
