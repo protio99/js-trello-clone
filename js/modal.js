@@ -7,7 +7,7 @@ var createTask = document.getElementById("create-task");
 var taskTittle = document.getElementById("task-tittle")
 var taskDescription = document.getElementById("task-description")
 
-createTask.addEventListener('click', addTaskToLs)
+createTask.addEventListener('click', addTaskToLocalStorage)
 openModalButton.addEventListener("click", function () {
   modal.style.display = "block";
 });
@@ -22,15 +22,17 @@ window.addEventListener("click", function (event) {
   }
 });
 
-function addTaskToLs(e) {
-  // e.preventDefault()
+function addTaskToLocalStorage(e) {
+  e.preventDefault()
   let tasks = localStorage.getItem("tasks")
   let tasksParse = JSON.parse(tasks)
-  let newPosition = Object.keys(tasksParse).length + 1
+  let tasksLength = Object.keys(tasksParse).length
+  let key = `card${tasksLength}`
   modal.style.display = "none"
-  tasksParse[newPosition] = {
+  tasksParse[key] = {
     "tittle": taskTittle.value,
-    "description": taskDescription.value
+    "description": taskDescription.value,
+    "position": "to-do"
   }
   console.log(tasksParse);
   localStorage.setItem("tasks", JSON.stringify(tasksParse))

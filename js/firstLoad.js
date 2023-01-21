@@ -9,7 +9,7 @@ function createNotes() {
         let div = document.createElement('div')
         div.setAttribute('draggable', true)
         div.classList.add('card')
-        div.id = `card${index}`
+        div.id = key
         div.innerHTML = `
         
             <div class="card--tittle">${tittle}</div>

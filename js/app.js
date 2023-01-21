@@ -4,10 +4,10 @@ const card = document.querySelectorAll(".card")
 const boxes = document.querySelectorAll('.board--column')
 console.log(card);
 
-card.forEach(c => {
-    c.addEventListener('dragstart', dragStart)
+// card.forEach(c => {
+//     c.addEventListener('dragstart', dragStart)
 
-})
+// })
 
 
 function dragStart(e) {
@@ -49,13 +49,14 @@ function dragLeave(e) {
 function drop(e) {
     console.log("Drop", e);
     const id = e.dataTransfer.getData('text/plain');
-    console.log(id);
+    let cardData = JSON.parse(localStorage.getItem("tasks"))
     const draggable = document.getElementById(id);
-
     // add it to the drop target
     e.target.appendChild(draggable);
-
     // display the draggable element
     draggable.classList.remove('hide');
     e.target.classList.remove('drag-over');
+    let newPosition = e.target.classList[1]
+    cardData[id].position = newPosition
+    localStorage.setItem('tasks', JSON.stringify(cardData))
 }
