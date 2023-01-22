@@ -38,3 +38,14 @@
 
     }
   }
+.header__tittle__main{
+    display: flex;
+    align-items: center;
+  }
+
+.header__tittle__main i{
+    color: white;
+    font-size: 2rem;
+    margin: 0 0 0 .6rem;
+    
+  }

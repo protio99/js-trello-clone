@@ -20,7 +20,7 @@ function createNotes() {
             </div>
             <div class="card--actions">
             <i class="fa-solid fa-pencil" ></i>
-            <i class="fa-solid fa-trash-can" id="delete-${key}" onclick="deleteCard(${key})"></i>
+            <i class="fa-solid fa-trash-can delete" id="delete-${key}" onclick="deleteCard(${key})"></i>
             </div>
             
         `
