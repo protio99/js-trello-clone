@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/board.css" />
     <link rel="stylesheet" href="./styles/card.css" />
     <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
     <title>trello-clone</title>
   </head>
   <body onload="verifyTasksObject()">
@@ -15,18 +18,29 @@
       <h1 class="header__tittle">Trello-clone</h1>
       <p class="header__paragraph">Using HTML drag and drop API from Javascript Vanilla</p>
     </header>
-    <button id="openModal">New task</button>
     <main class="board">
-      <div class="board--column to-do" id="to-do-column">
+      <div>
+        <button id="openModal">New task</button>
+        
+      </div>
+      <div class="board-column-container">
         <h3 class="board--column--tittle">To-do</h3>
-      
+        <div class="board--column to-do" id="to-do-column">     
+        </div>
       </div>
-      <div class="board--column doing" id="doing-column">
+
+      <div class="board-column-container">
         <h3 class="board--column--tittle">Doing</h3>
+        <div class="board--column doing" id="doing-column">
+        </div>
       </div>
-      <div class="board--column done" id="done-column">
+
+      <div class="board-column-container">
         <h3 class="board--column--tittle">Done</h3>
+        <div class="board--column done" id="done-column">
+        </div>
       </div>
+
     </main>
     <div id="modal" class="modal">
         <div class="modal--content">

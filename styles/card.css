@@ -1,7 +1,14 @@
 .card{
-    background-color: #F0F292;
-    border-radius: 20px;
+    background-color: rgb(240, 239, 244);
+    border-radius: 10px;
     height: 10rem;
     padding: 1rem;
     margin: .5rem 0 .5rem 0;
+    width: 80%;
+    
+}
+
+.card--tittle{
+    font-size: 1.3rem;
+    font-weight: 900;
 }
