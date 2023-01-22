@@ -14,9 +14,10 @@ function createNotes() {
         div.classList.add('card')
         div.id = key
         div.innerHTML = `
-        
-            <div class="card--tittle">${tittle}</div>
-            <div class="card--content">${description}</div>
+            <div class="card--info">
+                <div class="card--tittle">${tittle}</div>
+                <div class="card--content">${description}</div>
+            </div>
             <div class="card--actions">
             <i class="fa-solid fa-pencil" ></i>
             <i class="fa-solid fa-trash-can" id="delete-${key}" onclick="deleteCard(${key})"></i>
