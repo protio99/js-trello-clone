@@ -9,8 +9,6 @@ function createNotes() {
         let tittle = tasks[key].tittle
         let description = tasks[key].description
         let position = tasks[key].position
-        console.log("position-------------", position);
-        console.log(`card${index}`);
         let div = document.createElement('div')
         div.setAttribute('draggable', true)
         div.classList.add('card')
@@ -19,20 +17,19 @@ function createNotes() {
         
             <div class="card--tittle">${tittle}</div>
             <div class="card--content">${description}</div>
+            <div class="card--actions">
+            <i class="fa-solid fa-pencil" ></i>
+            <i class="fa-solid fa-trash-can" id="delete-${key}" onclick="deleteCard(${key})"></i>
+            </div>
+            
         `
         div.addEventListener('dragstart', dragStart)
         if (position === "to-do") {
-            console.log("$$$$$$$$$$$$to do colmn");
             toDoColumn.appendChild(div)
         } else if (position === "doing") {
-            console.log("##############doing colmn");
             doingColumn.appendChild(div)
-
         } else {
-            console.log("///////////done colmn");
-
             doneColumn.appendChild(div)
-
         }
 
 
