@@ -50,12 +50,14 @@
             <span class="close">&times;</span>
             <h2>New task</h2>
             <p>Please enter a tittle and a description for the new task</p>
-            <form>
-                <label for="task-tittle">Tittle</label><br>
+            <form class="task-modal">
+                <label for="task-tittle" class="task-labels">Tittle</label><br>
                 <input type="text" id="task-tittle" name="task-tittle"><br>
-                <label for="task-description">Description</label><br>
+                <label for="task-description" class="task-labels">Description</label><br>
                 <input type="text" id="task-description" name="task-description"><br>
-               <button id="create-task">Create task</button>
+                <div class="create-task-container">
+                  <button id="create-task" class="board--button">Create</button>
+                </div>
             </form>
         </div>
         <script src="https://kit.fontawesome.com/520c139c3d.js" crossorigin="anonymous"></script>
