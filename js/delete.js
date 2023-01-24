@@ -7,6 +7,6 @@ function deleteCard(element) {
     console.log(tasks);
     localStorage.setItem("tasks", JSON.stringify(tasks))
     console.log(element.id);
-    location.reload()
-
+    /* Debes de redibujar el tablero o eliminar de el a quien se saca tu decides :) */
+    // location.reload()
 }
