@@ -2,17 +2,11 @@
 //the specific css selector, in this case id "card"
 const card = document.querySelectorAll(".card")
 const boxes = document.querySelectorAll('.board--column')
-console.log(card);
 
-// card.forEach(c => {
-//     c.addEventListener('dragstart', dragStart)
-
-// })
 
 
 function dragStart(e) {
     console.log('id', e.target.id);
-
     e.dataTransfer.setData('text/plain', e.target.id)
     // e.target.classList.add('hide')
     setTimeout(() => {
@@ -66,6 +60,7 @@ function drop(e) {
 
     localStorage.setItem('tasks', JSON.stringify(cardData))
     div.parentNode.removeChild(div)
+
     if (newPosition === "to-do") {
         div.addEventListener('dragstart', dragStart)
         toDoColumn.appendChild(div)
