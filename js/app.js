@@ -1,5 +1,3 @@
-//querySelector select the first coincidence with
-//the specific css selector, in this case id "card"
 const card = document.querySelectorAll('.card');
 const boxes = document.querySelectorAll('.board--column');
 
@@ -16,12 +14,10 @@ function dragStart(e) {
 
 function dragEnter(e) {
   e.preventDefault();
-  // console.log("Drag enter", e);
   e.target.classList.add('drag-over');
 }
 function dragOver(e) {
   e.preventDefault();
-  // console.log("Drag over", e);
   e.target.classList.add('drag-over');
 }
 
@@ -39,28 +35,20 @@ function drop(e) {
   let div = document.getElementById(id);
   console.log(div);
   let cardData = JSON.parse(localStorage.getItem('tasks'));
-  const draggable = document.getElementById(id);
-  // add it to the drop target
-  e.target.appendChild(draggable);
-  // display the draggable element
-  draggable.classList.remove('hide');
+  e.target.appendChild(div);
+  div.classList.remove('hide');
   e.target.classList.remove('drag-over');
   let newPosition = e.target.classList[1];
   cardData[id].position = newPosition;
-
   localStorage.setItem('tasks', JSON.stringify(cardData));
   div.parentNode.removeChild(div);
-  /*
-    Acá hay una instrucción que repites en todos los casos, qué tal si la pones afuera
-  */
+  div.addEventListener('dragstart', dragStart);
+
   if (newPosition === 'to-do') {
-    div.addEventListener('dragstart', dragStart);
     toDoColumn.appendChild(div);
   } else if (newPosition === 'doing') {
-    div.addEventListener('dragstart', dragStart);
     doingColumn.appendChild(div);
   } else {
-    div.addEventListener('dragstart', dragStart);
     doneColumn.appendChild(div);
   }
 }
