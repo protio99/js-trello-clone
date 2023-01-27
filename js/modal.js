@@ -6,7 +6,10 @@ const createTaskButton = document.getElementById('create-task');
 const taskTitle = document.getElementById('task-tittle');
 const taskDescription = document.getElementById('task-description');
 
+
+
 function addTaskToLocalStorage(e) {
+
   e.preventDefault();
   const today = new Date()
   const tasks = localStorage.getItem('tasks');
@@ -23,7 +26,9 @@ function addTaskToLocalStorage(e) {
   }
   tasksParse[key] = divData;
   localStorage.setItem('tasks', JSON.stringify(tasksParse));
-  createDivHtmlElement(divData)
+  createDivHtmlElement(divData);
+  document.getElementById('modal-form').reset();
+
 }
 
 

@@ -38,7 +38,7 @@ function createDivHtmlElement(data) {
                 <div class="card--content">${description}</div>
             </div>
             <div class="card--actions">
-            <i class="fa-solid fa-pencil" ></i>
+            <i class="fa-solid fa-pencil" id="edit-${key}" onclick="showEditForm(${key})" ></i>
             <i class="fa-solid fa-trash-can delete" id="delete-${key}" onclick="deleteCard(${key})"></i>
             </div>
         `;
