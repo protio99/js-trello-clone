@@ -23,7 +23,7 @@ function EditFormButton(e) {
     e.preventDefault();
     let newTittle = document.getElementById('edit-task-tittle')
     let newDescription = document.getElementById('edit-task-description')
-    let card = document.getElementById(data.key)
+    // let card = document.getElementById(data.key)
     tasks[data.key].tittle = newTittle.value;
     tasks[data.key].description = newDescription.value;
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -35,7 +35,7 @@ function EditFormButton(e) {
 
     }
     let column = document.querySelector(`.${data.position}`)
-    column.removeChild(card)
+    // column.removeChild(card)
     createDivHtmlElement(divData);
     modalEdit.style.display = 'none';
 

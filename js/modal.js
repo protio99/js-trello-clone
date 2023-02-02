@@ -7,7 +7,6 @@ const taskTitle = document.getElementById('task-tittle');
 const taskDescription = document.getElementById('task-description');
 
 
-
 function addTaskToLocalStorage(e) {
 
   e.preventDefault();
