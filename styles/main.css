@@ -1,72 +1,69 @@
-body{
-  background-color: black;
-  font-family: 'Inconsolata', monospace;
-  font-weight: 500;
+body {
+  background-color: #374055;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .drag-over {
-    border: dashed 3px red;
+  border: dashed 3px red;
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 20vh; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.5);
-  }
-  .modal-edit {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 20vh; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.5);
-  }
-  .modal--content {
-    position: relative; 
-    background-color: white;
-    margin: auto; 
-    padding: 20px;
-    width: 30vw;
-    border-radius: 3px;
-  
-  }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-edit {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 20vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal--content {
+  position: relative;
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  width: 30vw;
+  border-radius: 3px;
+}
 
-  .task-labels{
-    font-weight: 800;
-  }
+.task-labels {
+  font-weight: 800;
+}
 
-.task-tittle{
+.task-tittle {
   width: 100%;
   height: 2rem;
   border-radius: 3px none;
-  margin: .5rem 0 .5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
-
-.task-description{
+.task-description {
   width: 100%;
   height: 5rem;
   border-radius: 3px none;
-  margin: .5rem 0 .5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
-.create-task-container{
+.create-task-container {
   display: flex;
   flex-direction: row;
   justify-content: end;
-
 }
