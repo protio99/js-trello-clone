@@ -14,18 +14,18 @@
 }
 
 .header__btn {
-  margin: 1rem;
+  margin: 0 0.2rem 0 0.2rem;
   background-color: #39445700;
   height: 1.5rem;
   width: 1.7rem;
   border-radius: 3px;
   /* border-color: #39404d; */
-  border: 2px solid #39404d;
+  border: 2px solid #505b73;
   border-width: 1.5px;
 }
 
 .header__btn i {
-  color: #49759e;
+  color: #3694d7;
 }
 
 .header__paragraph::after {
@@ -59,4 +59,7 @@
   color: white;
   font-size: 2rem;
   margin: 0 0 0 0.6rem;
+}
+
+.header__btn-container {
 }

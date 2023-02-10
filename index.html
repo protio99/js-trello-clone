@@ -21,28 +21,54 @@
         <img src="./images/trello.png" class="header__img"></img>
         <h1 class="header__tittle">Trello-clone</h1>
       </div>
-      <a href="./prueba.html"><button type="button" class="header__btn" ><i class="fa-solid fa-exclamation"></i></button></a>
+      <div class="header__btn-container">
+        <a href="./prueba.html"><button type="button" class="header__btn" ><i class="fa-solid fa-plus"></i></button></a>
+        <a href="./prueba.html"><button type="button" class="header__btn" ><i class="fa-solid fa-circle-info"></i></button></a>
+      </div>
     </header>
     <main class="board">
-      <div class="board-column-button">
-        <img class="board--button--img" src="./images/idea.png">
-        <button id="openModal" class="board--button">New task</img></button>
-      </div>
       <div class="board-column-container">
-        <h3 class="board--column--tittle">To-do</h3>
+        <div class="board-column-header">
+          <h3 class="board--column--tittle">To-do</h3>
+          <div >
+            <i class="fa-solid fa-circle-plus add-i--to-do"></i>
+            <i class="fa-solid fa-ellipsis add-i--to-do"></i>
+          </div>
+        </div>
         <div class="board--column to-do" id="to-do-column">     
         </div>
       </div>
 
       <div class="board-column-container">
-        <h3 class="board--column--tittle">Doing</h3>
+        <div class="board-column-header">
+          <h3 class="board--column--tittle">Doing</h3>
+          <div >
+              <i class="fa-solid fa-circle-plus add-i--doing"></i>
+              <i class="fa-solid fa-ellipsis add-i--doing"></i>
+            </div>
+
+        </div>
         <div class="board--column doing" id="doing-column">
         </div>
       </div>
 
       <div class="board-column-container">
-        <h3 class="board--column--tittle">Done</h3>
+        <div class="board-column-header">
+          <h3 class="board--column--tittle">Done</h3>
+          <div >
+              <i class="fa-solid fa-circle-plus add-i--done"></i>
+              <i class="fa-solid fa-ellipsis add-i--done"></i>
+            </div>
+
+        </div>
         <div class="board--column done" id="done-column">
+        </div>
+      </div>
+
+       <div class="board-column-container">
+        <div class="board--column" id="new--colum">
+          <button id="openModal" class="board--button"><i class="fa-solid fa-plus"></i></button>
+
         </div>
       </div>
 
